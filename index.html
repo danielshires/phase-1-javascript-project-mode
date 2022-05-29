@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Convertr - The simple way to convert most things</title>
+    <meta name="description" content="Convert currency, weight and distance with Convertr. The simple way to convert most things.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <header>
+        <div id="headerLogo">
+            <h1>Convertr
+            </h1>
+            <img id="logo" class="logo" src="./images/convertr-logo.svg">
+        </div>
+        <div id="tagline">The simple way to convert most things.</div>
+    </header>
+    <main>
+        <section id="nav">
+            <nav>
+                <div class="selected">Currency</div>
+                <div>Weight (Coming Soon)</div>
+            </nav>
+        </section>
+        <section id="form">
+            <form>
+                <div id="base">
+                    <label for="baseCurrency">From</label>
+                    <input type="number" id="baseCurrency" name="baseCurrency" value="1" min="0" inputmode="numeric">
+                    <select type="select" id="selectBaseCurrency" name="selectBaseCurrency">
+                    </select>
+                </div>
+                <div id="convertButton"><button type="button"><img src="./images/arrow-left-right.svg"></button></div>
+                <div id="target">
+                    <label for="targetCurrency">To</label>
+                    <input type="number" id="targetCurrency" name="targetCurrency" value="0" min="0" inputmode="numeric">
+                    <select type="select" id="selectTargetCurrency" name="selectTargetCurrency">
+                    </select>
+                </div>
+            </form>
+            <div id="conversionDetail">
+                <div id="conversionText">1,000 AUD = 0.56635 GBP</div>
+                <div id="conversionDate" class="terms">Data accurate as of 24 May 2022</div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div id="loading"><img src="./images/oval.svg">
+        </div>
+    </footer>
+    <script src="index.js" defer>
+    </script>
+</body>
+
+</html>
