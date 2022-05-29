@@ -20,8 +20,6 @@ function getResults() {
         toggleLoading(false)
         return error
     })
-
-
 }
 
 function getCurrencyInfo() {
@@ -71,8 +69,7 @@ function displayResults(currency) {
             // Updates the target input
         inputTargetCurrency.value = baseToTarget
             // Updates the currency text
-        const dateOfData = currency.date
-        const newDate = new Date(dateOfData)
+        const newDate = new Date(currency.date)
         const newDateString = newDate.toString().slice(3, 15)
         conversionText.innerHTML = `1 ${baseCurrency} = ${currencyFrom} ${targetCurrency}`
         conversionDate.innerHTML = `Data accurate as of ${newDateString}`
