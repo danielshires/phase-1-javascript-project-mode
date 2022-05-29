@@ -68,11 +68,7 @@ function displayResults(currency) {
         const baseToTarget = parseFloat(multiplyRate(currencyData.baseInput, currencyData.targetRate).toFixed(2))
             // Updates the target input
         inputTargetCurrency.value = baseToTarget
-            // Updates the currency text
-        const newDate = new Date(currency.date)
-        const newDateString = newDate.toString().slice(3, 15)
-        conversionText.innerHTML = `1 ${baseCurrency} = ${currencyFrom} ${targetCurrency}`
-        conversionDate.innerHTML = `Data accurate as of ${newDateString}`
+
     }
 
     function targetConversion() {
@@ -82,6 +78,12 @@ function displayResults(currency) {
         const targetToBase = parseFloat(multiplyRate(currencyData.targetInput, currencyData.baseRate)).toFixed(2)
         inputBaseCurrency.value = targetToBase
     }
+
+    // Updates the currency text
+    const newDate = new Date(currency.date)
+    const newDateString = newDate.toString().slice(3, 15)
+    conversionText.innerHTML = `1 ${baseCurrency} = ${currencyFrom} ${targetCurrency}`
+    conversionDate.innerHTML = `Data accurate as of ${newDateString}`
 
     // Runs the initial base conversion
     baseConversion()
@@ -173,7 +175,6 @@ function toggleLoading(state) {
         loadingIcon.style.display = 'none';
     }
 }
-
 
 // Animation
 button.addEventListener('click', function(e) {
