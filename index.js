@@ -186,6 +186,7 @@ button.addEventListener('click', function(e) {
 
 // Start program
 
+// Dom Content Loaded
 getResults()
 getCurrencyInfo()
 switchCurrencies()
