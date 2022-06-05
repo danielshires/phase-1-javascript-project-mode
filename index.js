@@ -1,6 +1,7 @@
 let baseCurrency = 'AUD'
 let targetCurrency = 'GBP'
 let convertCurrencyAPI
+let currencySymbolsAPI
 
 const inputBaseCurrency = document.querySelector('input#baseCurrency')
 const selectBaseCurrency = document.querySelector('select#selectBaseCurrency')
@@ -24,7 +25,7 @@ function getResults() {
 
 function getCurrencyInfo() {
 
-    const currencySymbolsAPI = `https://api.exchangerate.host/symbols`
+    currencySymbolsAPI = `https://api.exchangerate.host/symbols`
 
     fetch(currencySymbolsAPI).then(currencies => currencies.json()).then(populateDropDown).catch(error => {
         return error
@@ -102,8 +103,6 @@ function populateDropDown(currencies) {
         symbolsArray.push(symbolsObject[key].code)
     }
 
-    // console.log(symbolsCode)
-
     symbolsArray.forEach(data => {
         // Update Base
         const optionElBase = document.createElement('option')
@@ -144,10 +143,17 @@ function switchCurrencies() {
     const button = document.querySelector('button')
 
     button.addEventListener('click', function(e) {
+        // Change currencies
         selectBaseCurrency.value = targetCurrency
         selectTargetCurrency.value = baseCurrency
         baseCurrency = selectBaseCurrency.value
         targetCurrency = selectTargetCurrency.value
+            // Animate Button
+        e.target.classList.add('animationActive')
+        setTimeout(function() {
+                e.target.classList.remove('animationActive')
+            }, 500)
+            // Get results
         getResults()
     })
 }
@@ -181,17 +187,11 @@ function toggleLoading(state) {
     }
 }
 
-// Animation
-button.addEventListener('click', function(e) {
-    e.target.classList.add('animationActive')
-    setTimeout(function() {
-        e.target.classList.remove('animationActive')
-    }, 500)
-})
+function init() {
+    // Start program
+    getResults()
+    getCurrencyInfo()
+    switchCurrencies()
+}
 
-// Start program
-
-// Dom Content Loaded
-getResults()
-getCurrencyInfo()
-switchCurrencies()
+document.addEventListener('DOMContentLoaded', init)

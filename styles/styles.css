@@ -18,7 +18,7 @@
         --font-lg: 1.125rem;
         --font-xl: 1.5rem;
         --font-xxl: 2rem;
-        --font-xxxl: 3rem;
+        --font-xxxl: 2.5rem;
         --spacing-xxs: 0.25rem;
         --spacing-xs: 0.5rem;
         --spacing-sm: 0.75rem;
@@ -26,7 +26,7 @@
         --spacing-lg: 1.125rem;
         --spacing-xl: 1.5rem;
         --spacing-xxl: 2rem;
-        --spacing-xxxl: 4rem;
+        --spacing-xxxl: 3rem;
         --spacing-xxxxl: 6rem;
     }
     
@@ -48,7 +48,8 @@
     
     header {
         grid-area: header;
-        margin-top: var(--spacing-base);
+        margin-top: var(--spacing-sm);
+        margin-bottom: var(--spacing-base);
         display: grid;
         row-gap: var(--spacing-xs);
     }
@@ -60,7 +61,7 @@
     }
     
     header h1 {
-        font-size: var(--font-xxl);
+        font-size: var(--font-xxxl);
     }
     
     div#headerLogo {
@@ -69,7 +70,13 @@
     }
     
     div#tagline {
-        font-size: var(--font-xl);
+        font-size: var(--font-lg);
+    }
+
+    @media only screen and (min-width:768px) {
+        div#tagline {
+            font-size: var(--font-xl);
+        }
     }
     
     img.logo {
@@ -137,7 +144,7 @@
         line-height: inherit;
         outline: none;
         /* Styles */
-        padding: var(--spacing-xl);
+        padding: var(--spacing-base);
         background-color: var(--background-white);
         border: 1px solid var(--text-color-light);
         border-radius: var(--spacing-xxs) 0 0 var(--spacing-xxs);
@@ -146,10 +153,6 @@
     }
     
     select[type=select] {
-        /* padding: var(--spacing-xs);
-    border: 1px solid var(--text-color-light);
-    border-radius: 0.125rem;
-    margin: 0; */
         /* Reset */
         appearance: none;
         background-color: transparent;
@@ -166,13 +169,20 @@
         border-right: 1px solid var(--text-color-light);
         border-right: 1px solid var(--text-color-light);
         border-radius: 0 var(--spacing-xxs) var(--spacing-xxs) 0;
-        padding: var(--spacing-xl);
+        padding: var(--spacing-lg);
         cursor: pointer;
         background-color: var(--background-white);
         grid-template-areas: "select";
         align-items: center;
         width: 100%;
         transform: rotate();
+    }
+    
+    @media only screen and (min-width:768px) {
+        input[type=number],
+        select[type=select] {
+            padding: var(--spacing-xl)
+        }
     }
     /* Button */
     
