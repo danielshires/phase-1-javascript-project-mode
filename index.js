@@ -96,24 +96,29 @@ function populateDropDown(currencies) {
 
     // Assign data from API to an array
     const symbolsObject = currencies.symbols
+    const symbolsArray = []
 
-    // Loop through array and create option elements
-    for (const currency in symbolsObject) {
+    for (const key in symbolsObject) {
+        symbolsArray.push(symbolsObject[key].code)
+    }
+
+    // console.log(symbolsCode)
+
+    symbolsArray.forEach(data => {
         // Update Base
         const optionElBase = document.createElement('option')
         selectBaseCurrency.append(optionElBase)
         optionElBase.className = 'baseCurrency'
-        optionElBase.value = symbolsObject[currency].code
-        optionElBase.innerHTML = symbolsObject[currency].code
+        optionElBase.value = data
+        optionElBase.innerHTML = data
 
         // Update Target
         const optionElTarget = document.createElement('option')
         selectTargetCurrency.append(optionElTarget)
         optionElTarget.className = 'targetCurrency'
-        optionElTarget.value = symbolsObject[currency].code
-        optionElTarget.innerHTML = symbolsObject[currency].code
-    }
-
+        optionElTarget.value = data
+        optionElTarget.innerHTML = data
+    })
     const optionBase = document.querySelectorAll('option.baseCurrency')
     const optionTarget = document.querySelectorAll('option.targetCurrency')
 
