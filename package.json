@@ -1,19 +1,20 @@
 {
-  "name": "phase-1-javascript-project-mode",
-  "version": "1.0.0",
-  "description": "JavaScript project for Academy XI",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/danielshires/phase-1-javascript-project-mode.git"
-  },
-  "author": "Daniel Shires",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/danielshires/phase-1-javascript-project-mode/issues"
-  },
-  "homepage": "https://github.com/danielshires/phase-1-javascript-project-mode#readme"
+    "name": "phase-1-javascript-project-mode",
+    "version": "1.0.0",
+    "description": "JavaScript project for Academy XI",
+    "main": "index.js",
+    "dependencies": {},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/danielshires/phase-1-javascript-project-mode.git"
+    },
+    "author": "Daniel Shires",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/danielshires/phase-1-javascript-project-mode/issues"
+    },
+    "homepage": "www.mutavi.io"
 }
